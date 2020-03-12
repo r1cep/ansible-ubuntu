@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: Ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v2
@@ -15,5 +15,7 @@ jobs:
         run: /bin/bash scripts/install-ansible.sh
 
       - name: Perform a syntax check on the playbook.
-        run: |
-          ansible-playbook -i inventory/hosts.ini ubuntu-bionic.yml --syntax-check
+        run: ansible-playbook -i inventory/hosts.ini ubuntu-bionic.yml --syntax-check
+
+      - name: Run ansible-playbook.
+        run: ansible-playbook -i inventory/hosts.ini ubuntu-bionic.yml --diff
