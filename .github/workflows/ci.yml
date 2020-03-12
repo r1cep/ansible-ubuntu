@@ -14,5 +14,6 @@ jobs:
       - name: Install ansible.
         run: /bin/bash scripts/install-ansible.sh
 
-      - name: Run ansible debug role. (will be removed)
-        run: ansible-playbook -i inventory/hosts.ini ubuntu-bionic.yml --diff --tags debug
+      - name: Perform a syntax check on the playbook.
+        run: |
+          ansible-playbook -i inventory/hosts.ini ubuntu-bionic.yml --syntax-check
