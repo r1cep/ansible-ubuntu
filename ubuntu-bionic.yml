@@ -6,3 +6,7 @@
     - import_role:
         name: debug
       tags: [never, debug]
+
+    - import_role:
+        name: common
+      tags: common

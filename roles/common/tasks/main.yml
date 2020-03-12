@@ -1,0 +1,13 @@
+---
+
+- import_tasks: 001_change-package-repository-to-japanese.yml
+  tags: common-repo
+
+- import_tasks: 002_update-all-packages.yml
+  tags: common-update-packages
+
+- import_tasks: 003_install-utility-packages.yml
+  tags: common-install-packages
+
+- import_tasks: 004_add-japanese-locale.yml
+  tags: common-locale
