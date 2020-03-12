@@ -1,0 +1,10 @@
+---
+
+- import_tasks: 001_print-some-ansible-distribution-debug-information.yml
+  tags: debug-ansible-distribution
+
+- import_tasks: 002_print-some-debug-information.yml
+  tags: debug-some-debug-information
+
+- import_tasks: 003_display-all-variables-facts-known-for-a-host.yml
+  tags: debug-all-variables-facts

@@ -1,0 +1,8 @@
+---
+
+- name: Configure Ubuntu-18.04 LTS (Bionic Beaver) settings for Windows Subsystem for Linux 2.
+  hosts: localhost
+  tasks:
+    - import_role:
+        name: debug
+      tags: [never, debug]
