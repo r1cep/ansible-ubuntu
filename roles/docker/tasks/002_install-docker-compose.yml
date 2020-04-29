@@ -1,0 +1,25 @@
+---
+
+# https://docs.docker.com/compose/install/#install-compose
+- name: Install docker-compose.
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/{{ docker.docker_compose_version }}/docker-compose-{{ ansible_system }}-{{ ansible_machine }}"
+    dest: /usr/local/bin/docker-compose
+    force: yes
+  register: docker_compose
+
+- block:
+  - name: Set execute permission to docker-compose binary.
+    file:
+      path: /usr/local/bin/docker-compose
+      mode: "a+x"
+
+  # ref. https://docs.docker.com/compose/completion/
+  - name: Install docker-compose bash-completion.
+    get_url:
+      url: "https://raw.githubusercontent.com/docker/compose/{{ docker.docker_compose_version }}/contrib/completion/bash/docker-compose"
+      dest: /etc/bash_completion.d/docker-compose
+
+  when:
+    - docker_compose.changed
+    - not ansible_check_mode

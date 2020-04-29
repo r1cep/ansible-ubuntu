@@ -1,0 +1,7 @@
+---
+
+- import_tasks: 001_install-docker-ce.yml
+  tags: docker-ce
+
+- import_tasks: 002_install-docker-compose.yml
+  tags: docker-compose

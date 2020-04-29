@@ -14,3 +14,7 @@
     - import_role:
         name: user
       tags: user
+
+    - import_role:
+        name: docker
+      tags: docker
