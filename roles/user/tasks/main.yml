@@ -1,0 +1,4 @@
+---
+
+- import_tasks: 001_configure-sudo-for-working-users.yml
+  tags: user-sudo
