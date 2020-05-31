@@ -5,17 +5,41 @@ on:
   pull_request:
 
 jobs:
-  test:
+  test-bionic:
     runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Install ansible.
-        run: /bin/bash scripts/install-ansible.sh
+        run: |
+          sudo apt update
+          sudo apt install software-properties-common
+          sudo apt-add-repository --yes --update ppa:ansible/ansible
+          sudo apt install ansible python-apt
 
       - name: Perform a syntax check on the playbook.
-        run: ansible-playbook -i inventory/hosts.ini ubuntu-bionic.yml --syntax-check
+        run: ansible-playbook -i inventory/hosts.ini -l bionic playbook.yml --syntax-check
 
       - name: Run ansible-playbook.
-        run: ansible-playbook -i inventory/hosts.ini ubuntu-bionic.yml --diff
+        run: ansible-playbook -i inventory/hosts.ini -l bionic playbook.yml --diff
+
+  test-focal:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install ansible.
+#        run: /bin/bash scripts/install-ansible.sh
+        run: |
+          sudo apt update
+          sudo apt install software-properties-common
+          sudo apt-add-repository --yes --update ppa:ansible/ansible
+          sudo apt install ansible python-apt
+
+      - name: Perform a syntax check on the playbook.
+        run: ansible-playbook -i inventory/hosts.ini -l focal playbook.yml --syntax-check
+
+      - name: Run ansible-playbook.
+        run: ansible-playbook -i inventory/hosts.ini -l focal playbook.yml --diff

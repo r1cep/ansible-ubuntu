@@ -1,7 +1,7 @@
 ---
 
 - name: Configure Ubuntu-18.04 LTS (Bionic Beaver) settings for Windows Subsystem for Linux 2.
-  hosts: localhost
+  hosts: bionic
   tasks:
     - import_role:
         name: debug
@@ -18,3 +18,18 @@
     - import_role:
         name: docker
       tags: docker
+
+- name: Configure Ubuntu-20.04 LTS (Focal Fossa) settings for Windows Subsystem for Linux 2.
+  hosts: focal
+  tasks:
+    - import_role:
+        name: debug
+      tags: [never, debug]
+
+    - import_role:
+        name: common
+      tags: common
+
+    - import_role:
+        name: user
+      tags: user
