@@ -1,0 +1,13 @@
+---
+
+common:
+  packages:
+    - make
+    - git
+    - vim
+    - tree
+    - colordiff
+    - jq
+  locale:
+    packages:
+      - language-pack-ja
