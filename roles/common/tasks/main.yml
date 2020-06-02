@@ -10,4 +10,7 @@
   tags: common-install-packages
 
 - import_tasks: 004_add-japanese-locale.yml
-  tags: common-locale
+  tags: common-add-japanese-locale
+
+- import_tasks: 005_change-local-to-us-utf8.yml
+  tags: common-change-locale-to-us

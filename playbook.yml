@@ -19,6 +19,10 @@
         name: docker
       tags: docker
 
+    - import_role:
+        name: ssh
+      tags: ssh
+
 - name: Configure Ubuntu-20.04 LTS (Focal Fossa) settings for Windows Subsystem for Linux 2.
   hosts: focal
   tasks:
@@ -33,3 +37,7 @@
     - import_role:
         name: user
       tags: user
+
+    - import_role:
+        name: ssh
+      tags: ssh

@@ -1,0 +1,7 @@
+---
+
+- name: Disable SendEnv in ssh_config.
+  replace:
+    path: /etc/ssh/ssh_config
+    regexp: "^([ ]*SendEnv)"
+    replace: '# \1'
