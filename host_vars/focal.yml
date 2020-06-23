@@ -8,6 +8,7 @@ common:
     - tree
     - colordiff
     - jq
+    - acl
   locale:
     packages:
       - language-pack-ja
