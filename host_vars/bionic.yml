@@ -9,6 +9,7 @@ common:
     - colordiff
     - jq
     - acl
+    - sshfs
   locale:
     packages:
       - language-pack-ja
