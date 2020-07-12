@@ -10,6 +10,7 @@ common:
     - jq
     - acl
     - sshfs
+    - nkf
   locale:
     packages:
       - language-pack-ja
