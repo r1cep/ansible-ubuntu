@@ -11,6 +11,8 @@ common:
     - acl
     - sshfs
     - nkf
+    - zip
+    - unzip
   locale:
     packages:
       - language-pack-ja
