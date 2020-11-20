@@ -1,0 +1,27 @@
+---
+
+# https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+
+# ref. https://github.com/ansible/ansible/issues/6148
+- name: Add gh apt-key.
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: C99B11DEB97541F0
+    state: present
+
+# ref. https://github.com/cli/cli/issues/1685
+- name: Add gh repository.
+  apt_repository:
+    repo: "deb \
+           https://cli.github.com/packages \
+           stable \
+           main"
+    state: present
+
+- block:
+  - name: Install gh.
+    apt:
+      name: gh
+      state: present
+
+  when: not ansible_check_mode
