@@ -1,0 +1,4 @@
+---
+
+- import_tasks: 001_install-gh.yml
+  tags: gh-install

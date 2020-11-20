@@ -23,6 +23,10 @@
         name: ssh
       tags: ssh
 
+    - import_role:
+        name: gh
+      tags: gh
+
 - name: Configure Ubuntu-20.04 LTS (Focal Fossa) settings for Windows Subsystem for Linux 2.
   hosts: focal
   tasks:
@@ -41,3 +45,7 @@
     - import_role:
         name: ssh
       tags: ssh
+
+    - import_role:
+        name: gh
+      tags: gh
