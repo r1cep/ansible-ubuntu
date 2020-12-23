@@ -13,6 +13,7 @@ common:
     - nkf
     - zip
     - unzip
+    - fzf
   locale:
     packages:
       - language-pack-ja
