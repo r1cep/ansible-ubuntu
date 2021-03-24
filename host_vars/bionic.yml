@@ -9,7 +9,6 @@ common:
     - colordiff
     - jq
     - acl
-    - sshfs
     - nkf
     - zip
     - unzip

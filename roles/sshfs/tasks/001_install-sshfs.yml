@@ -1,0 +1,6 @@
+---
+
+- name: Install sshfs package.
+  apt:
+    name: sshfs
+    state: present

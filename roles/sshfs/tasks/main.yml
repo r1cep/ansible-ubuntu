@@ -1,0 +1,7 @@
+---
+
+- import_tasks: 001_install-sshfs.yml
+  tags: sshfs-install
+
+- import_tasks: 002_sshfs-settings.yml
+  tags: sshfs-settings
