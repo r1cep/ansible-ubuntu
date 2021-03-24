@@ -24,6 +24,10 @@
       tags: ssh
 
     - import_role:
+        name: sshfs
+      tags: sshfs
+
+    - import_role:
         name: gh
       tags: gh
 
@@ -45,6 +49,10 @@
     - import_role:
         name: ssh
       tags: ssh
+
+    - import_role:
+        name: sshfs
+      tags: sshfs
 
     - import_role:
         name: gh

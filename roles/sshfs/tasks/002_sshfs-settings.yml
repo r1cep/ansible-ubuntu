@@ -1,0 +1,8 @@
+---
+
+- name: Allow user_alllow_other.
+  replace:
+    path: /etc/fuse.conf
+    backup: yes
+    regexp: '^#user_allow_other'
+    replace: 'user_allow_other'
