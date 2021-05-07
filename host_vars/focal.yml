@@ -13,6 +13,7 @@ common:
     - zip
     - unzip
     - fzf
+    - git-ftp
   locale:
     packages:
       - language-pack-ja

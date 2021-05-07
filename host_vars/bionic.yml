@@ -13,6 +13,7 @@ common:
     - zip
     - unzip
     # No package matching 'fzf' is available
+    - git-ftp
   locale:
     packages:
       - language-pack-ja
